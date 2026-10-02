@@ -34,8 +34,14 @@ const Transactions = () => {
     useEffect(() => {fetchTransaction()},[])
 
     const fetchTransaction = async () => {
+      try{
         const response = await getTransaction()
         setTransactions(response.data)
+      }
+      catch(err){
+        console.log(err.message)
+        alert("Can't reach the Server")
+      }
     }
  
   return (

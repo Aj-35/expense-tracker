@@ -52,7 +52,7 @@ addTransactionList,fetchTransaction,updateTransaction,
     }
 
   return (
-    <div>
+    <div className="transaction-form-wrap">
         <button className='info-button' onClick={() => openAddTransaction()}>
           +
           <span className='tooltip'>Add a transaction</span>

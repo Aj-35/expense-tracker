@@ -46,7 +46,7 @@ const TransactionContent = ({transactions,
     }
   return (
     <div>
-        <table>
+        <table className="transaction-content">
           <thead>
             <tr>
               <th>Type</th>
@@ -70,8 +70,10 @@ const TransactionContent = ({transactions,
                 <td>{paymentLabels[transaction.paymentMethod]}</td>
                 <td>{transaction.description}</td>
                 <td>{transaction.notes}</td>
-                <td><button onClick={() => handleDelete(transaction.id)}>Delete</button></td>
-                <td><button onClick={() => handleEdit(transaction)}>Edit</button></td>
+                <td className="actions-cell">
+                  <button className="edit-button" onClick={() => handleEdit(transaction)}>Edit</button>
+                  <button className="delete-button" onClick={() => handleDelete(transaction.id)}>Delete</button>
+                </td>
               </tr>
 
             ))
